@@ -13,7 +13,6 @@ import psutil
 import random
 
 client = discord.Client()
-token = 'NzU3MTg1MzYyNTEzODg3MjMz.X2ct0g.F6LLNlpvHZUiBNzCVHYP_1TgFkc'
 
 @client.event
 async def on_ready():
@@ -863,4 +862,6 @@ async def on_message(message):
             color=0xfc00f4
         ).set_thumbnail(url=f"https://minotar.net/armor/bust/{nickname}/100.png")
         await message.channel.send(embed=embed)
-client.run(token)
+
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
